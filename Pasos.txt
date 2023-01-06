@@ -1,0 +1,50 @@
+1 Instalar Node
+
+2. Git
+    Iniciar un repositorio:
+
+    echo >> README.md
+    echo >> .gitignore
+    git init 
+    git add README.md 
+    git commit -m "first commit" 
+    git branch -M main 
+    git remote add origin https://github.com/Danest02/nombre-del-proyecto.git
+    git push -u origen principal
+
+3 Gulp de forma global
+
+    npm install --global gulp-cli
+
+4 package.json
+
+    npm init
+
+5 Instalar Gulp en proyecto
+
+    npm install --save-dev gulp
+
+6 Instalar Plugins 
+
+    npm install --save-dev gulp-sass gulp-postcss autoprefixer gulp-cssnano gulp-purgecss gulp-pug gulp-rename gulp-libsquoosh@1.0.12
+    npm install --save-dev gulp-babel @babel/core @babel/preset-env gulp-terser gulp-concat
+
+7 Crear archivo gulpfile.js
+
+8 En gulpfile.js importar
+
+    const gulp = require('gulp');
+    const sass = require('gulp-sass');
+    const cssnano = require('gulp-cssnano');
+    const autoprefixer = require('autoprefixer');
+    const postcss = require('gulp-postcss');
+    const purgecss = require('gulp-purgecss');
+    const pug = require('gulp-pug');
+    const rename = require("gulp-rename");
+    const squoosh = require('gulp-libsquoosh');
+    const babel = require('gulp-babel');
+    const terser  =  require ( 'gulp-terser' ) ;
+    const concat = require('gulp-concat');
+
+
+9 Crear tareas
