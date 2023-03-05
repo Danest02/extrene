@@ -1,0 +1,7 @@
+$navbar-header-heihgt: 3.5rem;
+
+:root {
+    --scroll-bar: 0px;
+    --width-100vw: calc(100vw - var(--scroll-bar));
+}
+

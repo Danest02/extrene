@@ -1,0 +1,174 @@
+.body {
+  --color-white: #FEFEFE;
+  --color-primary-900: #121212;
+  --color-primary-800: #1A1A1A;
+  --color-primary-700: #1A1A1A;
+  --color-primary-600: #2C2C2C;
+  --color-primary-500: #353535;
+  --color-primary-400: #464646;
+  --color-primary-300: #5D5D5D;
+  --color-primary-200: #8B8B8B;
+  --color-primary-100: #BABABA;
+  --color-secondary-100: #FDCABE;
+  --color-secondary-200: #FCAD9C;
+  --color-secondary-300: #FC9179;
+  --color-secondary-400: #FB7456;
+  --color-secondary-500: #FA5833;
+  --color-secondary-600: #F93B10;
+  --color-secondary-700: #E02E06;
+  --color-secondary-800: #BD2705;
+  --color-secondary-900: #9A1F04;
+  --color-tertiary-100: #252525;
+  --color-tertiary-200: #222222;
+  --color-tertiary-300: #FFA78F;
+  --color-tertiary-400: #FF8B6B;
+  --color-tertiary-500: #FF6F47;
+  --color-tertiary-600: #1b1b1b;
+  --color-tertiary-700: #313131;
+  --color-tertiary-800: #222222;
+  --color-tertiary-900: #2e2e2e;
+  --color-btn-default: var(--color-primary-900);
+  --color-btn-hover: var(--color-primary-400);
+  --color-btn-pressed: var(--color-primary-300);
+  --color-btn-disabled: var(--color-primary-200);
+  --color-btn-outline-default: var(--color-primary-900);
+  --color-btn-outline-hover: var(--color-primary-100);
+  --color-btn-outline-pressed: var(--color-primary-900);
+  --color-btn-outline-disabled: var(--color-primary-400);
+  --color-text: var(--color-primary-900);
+  --color-text-white: #FEFEFE;
+  --color-tittle: var(--color-primary-700);
+  --color-tittle-white: var(--color-white);
+  --color-background-primary: #FEFEFE;
+  --color-background-secondary: #f9f9f9;
+  --color-icons-primary: var(--color-primary-500);
+  --color-footer: var(--color-primary-900);
+  --scrollbar: var(--color-secondary-500);
+  --color-user-select: var(--color-secondary-100);
+}
+
+.mybtn {
+  min-width: -moz-max-content;
+  min-width: max-content;
+  max-height: 36px;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  font-family: "button", arial;
+  background-color: var(--color-btn-default);
+  font-size: 16px;
+  line-height: 20px;
+  display: inline-block;
+  padding: 8px 16px;
+  color: var(--color-white);
+  text-decoration: none;
+  text-align: center;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.mybtn:hover {
+  background-color: var(--color-btn-hover);
+}
+.mybtn:active {
+  transform: scale(0.9);
+  background-color: var(--color-btn-pressed);
+}
+
+.mybtn--outline {
+  background-color: transparent;
+  color: var(--color-btn-outline-default);
+  border: 1px solid var(--color-btn-outline-default);
+}
+.mybtn--outline:hover {
+  background: var(--color-btn-outline-hover);
+}
+
+@font-face {
+  font-family: "material-icons-round";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(./MaterialIconsRound-Regular.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "p";
+  font-display: swap;
+  src: local("Montserrat-VariableFont_wght"), url(./Montserrat-VariableFont_wght.ttf) format("truetype");
+}
+@font-face {
+  font-family: "p-semibold";
+  font-display: swap;
+  font-weight: 600;
+  src: local("Montserrat-VariableFont_wght"), url(./Montserrat-VariableFont_wght.ttf) format("truetype");
+}
+@font-face {
+  font-family: "tittle";
+  font-display: swap;
+  font-style: normal;
+  src: local("Montserrat-Italic-VariableFont_wght"), url(./Montserrat-Italic-VariableFont_wght.ttf) format("truetype");
+}
+@font-face {
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: "button";
+  font-display: swap;
+  src: local("Montserrat-VariableFont_wght"), url(./Montserrat-VariableFont_wght.ttf) format("truetype");
+}
+h1,
+h2 {
+  font-family: "tittle";
+  line-height: 1;
+  font-weight: 900;
+  color: var(--color-tittle);
+}
+
+.h1 {
+  font-size: 32px;
+  text-align: center;
+  font-weight: 900;
+}
+@media (min-height: 400px) and (min-width: 768px) {
+  .h1 {
+    font-size: 48px;
+  }
+}
+
+.h2 {
+  font-size: 28px;
+}
+@media (min-height: 400px) and (min-width: 768px) {
+  .h2 {
+    font-size: 40px;
+  }
+}
+
+.p {
+  font-size: inherit;
+  text-align: left;
+}
+
+:root {
+  --space-1: 48px;
+  --space-2: 40px;
+  --space-3: 32px;
+  --space-4: 28px;
+  --space-5: 24px;
+  --space-6: 16px;
+  --space-7: 8px;
+}
+@media screen and (min-width: 768px) {
+  :root {
+    --space-1: 68px;
+    --space-2: 56px;
+    --space-3: 44px;
+    --space-4: 40px;
+    --space-5: 36px;
+    --space-6: 22px;
+    --space-7: 12px;
+  }
+}

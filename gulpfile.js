@@ -1,8 +1,9 @@
 const gulp = require('gulp');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'))
 const postcss = require('gulp-postcss');
 const cssnano = require('gulp-cssnano');
 const autoprefixer = require('autoprefixer');
+const purgecss = require('gulp-purgecss')
 const pug = require('gulp-pug');
 const rename = require("gulp-rename");
 // const squoosh = require('gulp-libsquoosh');
@@ -14,6 +15,7 @@ const concat = require('gulp-concat');
 // TODO--- PUG 
 
 const minified = false;
+const renamePHP = false
 gulp.task("pugPages", () => {
     return (
         gulp
@@ -23,9 +25,9 @@ gulp.task("pugPages", () => {
                     pretty: minified ? false : true,
                 })
             )
-            .pipe(rename({
-                extname: ".php"
-            }))
+            // .pipe(rename({
+            //     extname: ".php"
+            // }))
             .pipe(gulp.dest("./public"))
     );
 });
@@ -148,8 +150,8 @@ gulp.task("imagemin720", () => {
 
 gulp.task("default", () => {
     gulp.watch("./src/pug/*.pug", gulp.series("pugPages"));
-    gulp.watch("./src/scss/scss omnibus/**/*.scss", gulp.series("cssOmnibus"));
-    gulp.watch("./src/scss/scss pages/*.scss", gulp.series("cssPages"));
+    gulp.watch("./src/scss/**/*.scss", gulp.series("cssOmnibus"));
+    gulp.watch("./src/scss/**/*.scss", gulp.series("cssPages"));
     gulp.watch("./src/js/*.js", gulp.series("babel"));
 });
 

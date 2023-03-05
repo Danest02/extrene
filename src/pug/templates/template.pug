@@ -1,0 +1,69 @@
+//- pug -w --pretty src/pug/pages/*.pug -o ./public -p ./src/pug/templates
+<!DOCTYPE html>
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Julio Forros
+        //- meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        //- STUB --- ESTILOS CSS
+        link(rel="stylesheet" al="style" type="text/css" href="styles.css")
+        //- STUB --- JAVASCRIPT
+        script(src="scripts-min.js" defer)
+        //- STUB --- PRECARGAR FUENTES
+        <link rel="preload" href="./Anton-Regular" as="font" type="font/ttf" crossorigin>
+        <link rel="preload" href="./BebasNeue-Regular.ttf" as="font" type="font/ttf" crossorigin>
+        <link rel="preload" href="./Montserrat-Regular.ttf" as="font" type="font/ttf" crossorigin>
+        <link rel="preload" href="./MaterialIconsRound-Regular.otf" as="font" type="font/otf" crossorigin>
+        meta(name="description" content="Fabrica y almacen de accesorios para motos")
+        //- STUB --- AUTOR
+        meta(name="author" content="Ceo Alg")
+        //- STUB --- INDEXAR LOS BUSCADORES | no es necesario si esta en index
+        meta(name="robots" content="index, follow")
+        //- STUB --- CSP
+        //- <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://www.google.com/;font-src https:; style-src 'unsafe-inline'; style-src-elem  https:; script-src 'self' ">
+        //- STUB --- FAVICON | 64 x 64 recomendado
+        link(rel="shortcut icon" href="./favicon.svg" type="image/x-icon")
+        link(rel="icon" href="favicon.svg" type="image/x-icon")
+        //- STUB --- LEAFLET.JS mapa
+        //- link(rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css")
+        //- STUB --- SWIPPER JS
+        //- link(rel="stylesheet" type="text/css" href="https://unpkg.com/swiper@8/swiper-bundle.min.css")
+        //- STUB ---: ICONOS DE GOOGLE
+        //- link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons+Round")
+        //- link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons")
+        //- link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons+Outline+Two+Tone")
+        //- link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons+Outline+Sharp")
+        //- STUB --- SOCIAL CARDS
+        //- meta(property="og:image" content="http://lagosdepescaeljaneiro.ga/galery/logo/logo.webp")
+        //- meta(property="og:site_name" content="Lagos de Pesca el Janeiro")
+        //- meta(property="og:description" content="Ven a disfrutar  de un ambiente relajante y natural con un nucleo familiar o grupo de amigos")
+        //- meta(property="og:url" content="http://lagosdepescaeljaneiro.ga")
+        //- meta(property="og:type" content="website")
+        //- meta(property="og:title" content="Lagos de Pesca el Janeiro")
+        block head
+
+
+
+
+    body.body#body
+
+        -const whatsappAlmacen = "311 626 45 48"
+        -const phoneAlmacen = "325 8383"
+        -const whatsappFabrica= "320 645 0619"
+        -const phoneFabrica = "332 0211"
+        -const facebook = "Julio Forros Pereira"
+        -const instagram = "@julioforrospereira"
+        -const correo = "julioforrospereira@gmail.com"
+
+        header.header
+            include ../blocks/navbar-header.pug
+            block header
+
+        main.main
+            block main
+            include ../blocks/window-search
+            include ../blocks/contact-button
+            //- include ../blocks/js.pug
+            include ../blocks/footer.pug
+

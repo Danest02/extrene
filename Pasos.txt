@@ -34,7 +34,7 @@
 8 En gulpfile.js importar
 
     const gulp = require('gulp');
-    const sass = require('gulp-sass');
+    const sass = require('gulp-sass')(require('sass'))
     const cssnano = require('gulp-cssnano');
     const autoprefixer = require('autoprefixer');
     const postcss = require('gulp-postcss');

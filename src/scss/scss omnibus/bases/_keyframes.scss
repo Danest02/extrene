@@ -1,0 +1,15 @@
+.aparecer{
+    animation: aparecer 1s ease;
+}
+
+// * animacion para imagenes de rombo a circulo
+@keyframes aparecer {
+    0% {
+        transform: translateY(20%) scale(1);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%) scale(1);
+        opacity: 1;
+    }
+}

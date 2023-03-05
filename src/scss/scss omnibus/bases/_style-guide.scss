@@ -1,0 +1,300 @@
+// TODO:ANCHOR --- COLORS
+
+.body {
+
+    // TODO:ANCHOR --- GENERAL COLORS
+
+    // * White
+    --color-white: #FEFEFE;
+
+     // * Primary
+    --color-primary-900: #121212;
+    --color-primary-800: #1A1A1A;
+    --color-primary-700: #1A1A1A;
+    --color-primary-600: #2C2C2C;
+    --color-primary-500: #353535;
+    --color-primary-400: #464646;
+    --color-primary-300: #5D5D5D;
+    --color-primary-200: #8B8B8B;
+    --color-primary-100: #BABABA;
+
+    // * Secondary
+    --color-secondary-100: #FDCABE;
+    --color-secondary-200: #FCAD9C;
+    --color-secondary-300: #FC9179;
+    --color-secondary-400: #FB7456;
+    --color-secondary-500: #FA5833;
+    --color-secondary-600: #F93B10;
+    --color-secondary-700: #E02E06;
+    --color-secondary-800: #BD2705;
+    --color-secondary-900: #9A1F04;
+
+    // * tertiary
+    --color-tertiary-100: #252525;
+    --color-tertiary-200: #222222;
+    --color-tertiary-300: #FFA78F;
+    --color-tertiary-400: #FF8B6B;
+    --color-tertiary-500: #FF6F47;
+    --color-tertiary-600: #1b1b1b;
+    --color-tertiary-700: #313131;
+    --color-tertiary-800: #222222;
+    --color-tertiary-900: #2e2e2e;
+
+    // TODO:ANCHOR --- SPECIFIC COLORS
+
+    // * Button state 
+    --color-btn-default: var(--color-primary-900);
+    --color-btn-hover: var(--color-primary-400);
+    --color-btn-pressed: var(--color-primary-300);
+    --color-btn-disabled: var(--color-primary-200);
+
+    // * Button state outline
+    --color-btn-outline-default: var(--color-primary-900);
+    --color-btn-outline-hover: var(--color-primary-100);
+    --color-btn-outline-pressed: var(--color-primary-900);
+    --color-btn-outline-disabled: var(--color-primary-400);
+
+    // * Color text
+    --color-text: var(--color-primary-900);
+    --color-text-white: #FEFEFE;
+    
+    // * Color tittle
+    --color-tittle: var(--color-primary-700);
+    --color-tittle-white: var(--color-white);
+
+    // * Background
+    --color-background-primary: #FEFEFE;
+    --color-background-secondary: #f9f9f9;
+
+    // * Color icons
+    --color-icons-primary: var(--color-primary-500);
+
+    // * Color footer
+    --color-footer: var(--color-primary-900);
+
+    // * Color footer
+    --scrollbar: var(--color-secondary-500);
+    
+    // * Color user select
+    --color-user-select: var(--color-secondary-100);
+}
+
+//  TODO:ANCHOR --- BUTTON 
+
+.mybtn {
+    min-width: max-content;
+    max-height: 36px;
+    max-width: max-content;
+    font-family: 'button', arial;
+    background-color: var(--color-btn-default);
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-block;
+    padding: 8px 16px;
+    color: var(--color-white);
+    text-decoration: none;
+    text-align: center;
+    border-radius: 2px;
+    // border-radius: 18px;
+    outline:none;
+    cursor: pointer;
+    border: none;
+    transition: background-color .3s ease, transform .3s ease;
+    user-select: none;
+    
+    &:hover {
+        background-color: var(--color-btn-hover);
+        // transform: scale(1.02);
+    }
+    
+    &:active {
+        transform: scale(.9);
+        background-color: var(--color-btn-pressed);
+
+    }
+}
+
+
+.mybtn--outline {
+    background-color: transparent;
+    color: var(--color-btn-outline-default);
+    border: 1px solid var(--color-btn-outline-default);
+
+    &:hover {
+        background: var(--color-btn-outline-hover);
+    }
+}
+
+.mybtn--disable{
+    background-color: var(--color-btn-disabled);
+    border: var(--color-btn-disabled);
+}
+
+
+// TODO:ANCHOR --- ICONS
+
+@font-face {
+    font-family: 'material-icons-round';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    // src: url(https://miweb.com/MaterialIcons-Regular.eot);
+    // /* For IE6-8 */
+    src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        url(./MaterialIconsRound-Regular.otf) format('truetype');
+}
+
+.material-icons-round {
+    font-family: 'material-icons-round';
+    line-height: 1;
+    font-size: 24px;
+    user-select: none;
+}
+
+.pseudo-icon {
+    font-family: "material-icons-round";
+    vertical-align: middle;
+    margin-right: 4px;
+    font-size: 24px;
+    color: inherit;
+}
+
+
+//  TODO:ANCHOR --- TEXTS
+
+// * Paragraph
+@font-face {
+    font-family: 'p';
+    font-display: swap;
+    src: local('Montserrat-VariableFont_wght'), url(./Montserrat-VariableFont_wght.ttf) format('truetype');
+
+}
+
+// * Paragraph SemiBold
+@font-face {
+    font-family: 'p-semibold';
+    font-display: swap;
+    font-weight: 600;
+    src: local('Montserrat-VariableFont_wght'), url(./Montserrat-VariableFont_wght.ttf) format('truetype');
+
+}
+
+// * Tittle
+@font-face {
+    font-family: 'tittle';
+    font-display: swap;
+    font-style: normal;
+    src: local('Montserrat-Italic-VariableFont_wght'),  url(./Montserrat-Italic-VariableFont_wght.ttf) format('truetype');
+    // src: local('BebasNeue-Regular'), local('BebasNeue Regular'), url(./BebasNeue-Regular.ttf) format('truetype');
+}
+
+// * Button
+@font-face {
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'button';
+    font-display: swap;
+    // src: local('Roboto-regular'), local('Roboto regular'), format('truetype');
+    src: local('Montserrat-VariableFont_wght'), url(./Montserrat-VariableFont_wght.ttf) format('truetype');
+    // src: local('Poppins-Regular'), local('Poppins Regular'), url(./Poppins-Regular.ttf) format('truetype');
+
+
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'tittle';
+    line-height: 1;
+    font-weight: 900;
+
+    color: var(--color-tittle);
+
+}
+
+.h1 {
+    font-size: 32px;
+    text-align: center;
+    font-weight: 900;
+    @include  min-height-min-width(400px, 768px) {
+        font-size: 48px;
+    }
+
+}
+
+.h2 {
+    font-size: 28px;
+
+    @include  min-height-min-width(400px, 768px) {
+        font-size: 40px;
+    }
+}
+
+.h3 {
+    font-size: 24px;
+
+    @include  min-height-min-width(400px, 768px) {
+        font-size: 32px; 
+    }
+}
+
+.h4 {
+    font-size: 20px;
+
+    @include min-height-min-width(400px, 768px) {
+        font-size: 22px;
+    }
+}
+
+.p {
+    font-size: inherit;
+    text-align: left;
+}
+
+.p-small {
+    font-size: 14px;
+}
+
+
+
+
+//  TODO:ANCHOR --- SPACES
+
+:root {
+    --space-1: 48px;
+    --space-2: 40px;
+    --space-3: 32px;
+    --space-4: 28px;
+    --space-5: 24px;
+    --space-6: 16px;
+    --space-7: 8px;
+
+    @include min-width(768px) {
+        --space-1: 68px;
+        --space-2: 56px;
+        --space-3: 44px;
+        --space-4: 40px;
+        --space-5: 36px;
+        --space-6: 22px;
+        --space-7: 12px;
+    }
+}
+
+//  TODO:ANCHOR --- border radius
+
+.border-radius {
+    border-radius: 8px;
+}
+
+
+//  TODO:ANCHOR --- SHADOWS
+
+.border-shadow {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+}
+
+.border-shadow-left {
+    box-shadow: -4px 4px 10px rgba(0, 0, 0, .25);
+}
+

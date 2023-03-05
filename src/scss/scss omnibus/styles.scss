@@ -1,3 +1,9 @@
-body{
-    color: red;
-}
+@import "bases/breakpoints";
+@import "bases/variables";
+@import "bases/normalize";
+@import "bases/style-guide";
+@import "bases/extends";
+@import "bases/general-styles";
+@import "bases/keyframes";
+
+@import "blocks/contact-button";

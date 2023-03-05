@@ -1,0 +1,51 @@
+.contact-button {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    pointer-events: none;
+    transition: transform .5s ease-in-out;
+    z-index: 10;
+
+    &:active{
+        transform: scale(.65);
+        @include desktop{
+            transform: scale(.95);
+
+        }
+
+
+    }
+    &:hover{
+        &::before{
+            opacity: 1;
+        }
+        .contact-button__icon{
+            transform: scale(1.1);
+        }
+    }
+    @include min-width(1200px){
+        &::before {
+            content: "Comenzar una conversacion por WhatsApp";
+            font-size: 14px;
+            padding: 12px;
+            background-color: var(--color-white);
+            box-shadow: 0 0 16px 4px rgba(0, 0, 0, .2);
+            border-radius: 4px;
+            opacity: 0;
+            transition: opacity .5s ease-in;
+            color: var(--color-text);
+            height: auto;
+            width: 320px;
+        }
+    }
+    .contact-button__icon {
+        height: 48px;
+        width: 48px;
+        pointer-events: auto;
+        transition: transform .5s ease;
+    }
+
+}
