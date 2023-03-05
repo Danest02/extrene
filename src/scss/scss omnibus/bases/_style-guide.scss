@@ -43,9 +43,9 @@
     // TODO:ANCHOR --- SPECIFIC COLORS
 
     // * Button state 
-    --color-btn-default: var(--color-primary-900);
-    --color-btn-hover: var(--color-primary-400);
-    --color-btn-pressed: var(--color-primary-300);
+    --color-btn-default: var(--color-primary-700);
+    --color-btn-hover: var(--color-primary-900);
+    --color-btn-pressed: var(--color-primary-900);
     --color-btn-disabled: var(--color-primary-200);
 
     // * Button state outline
@@ -77,20 +77,29 @@
     
     // * Color user select
     --color-user-select: var(--color-secondary-100);
+
+    // * Color border link
+    --color-border-link-menu: var(--color-primary-900);
+
+    // * color Scroll
+    --color-scroll: var(--color-primary-300);
+
 }
 
 //  TODO:ANCHOR --- BUTTON 
 
 .mybtn {
     min-width: max-content;
-    max-height: 36px;
+    // max-height: 36px;
     max-width: max-content;
     font-family: 'button', arial;
+    font-weight: 600;
     background-color: var(--color-btn-default);
     font-size: 16px;
-    line-height: 20px;
+    // line-height: 1;
     display: inline-block;
-    padding: 8px 16px;
+    padding: 10px 20px;
+    // padding: 8px 16px;
     color: var(--color-white);
     text-decoration: none;
     text-align: center;
@@ -104,12 +113,26 @@
     
     &:hover {
         background-color: var(--color-btn-hover);
-        // transform: scale(1.02);
+        transform: scale(1.02);
     }
     
     &:active {
-        transform: scale(.9);
+        transform: scale(1);
         background-color: var(--color-btn-pressed);
+
+    }
+}
+.mybtn--white{
+    background-color: var(--color-white);
+    color: var(--color-text);
+    &:hover {
+        background-color: var(--color-white);
+        transform: scale(1.02);
+    }
+    
+    &:active {
+        transform: scale(1);
+        background-color: var(--color-white);
 
     }
 }
@@ -123,6 +146,10 @@
     &:hover {
         background: var(--color-btn-outline-hover);
     }
+}
+.mybtn--outline-white{
+    color: var(--color-text-white);
+    border: 1px solid var(--color-text-white);
 }
 
 .mybtn--disable{
@@ -208,7 +235,6 @@ h4 {
     font-family: 'tittle';
     line-height: 1;
     font-weight: 900;
-
     color: var(--color-tittle);
 
 }
@@ -216,7 +242,6 @@ h4 {
 .h1 {
     font-size: 32px;
     text-align: center;
-    font-weight: 900;
     @include  min-height-min-width(400px, 768px) {
         font-size: 48px;
     }
@@ -284,7 +309,9 @@ h4 {
 //  TODO:ANCHOR --- border radius
 
 .border-radius {
-    border-radius: 8px;
+    border-radius: 2px;
+    overflow: hidden;
+
 }
 
 
@@ -298,3 +325,11 @@ h4 {
     box-shadow: -4px 4px 10px rgba(0, 0, 0, .25);
 }
 
+.boton-whatsapp{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    svg{
+        height: 24px;
+    }
+}

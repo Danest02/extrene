@@ -1,0 +1,20 @@
+.navbar-header#navbar-header
+    .navbar-header__container.container-large
+        a(href="./" class="navbar-header__logo" aria-label="inicio")
+        //-     img(height="40" width="214" src="./logo.svg" alt="logo Julio Forros")
+        .navbar-header__links-and-buttons
+            ul.navbar-header__links#navbar-header__links
+                li(class="navbar-header__link navbar-header__link--inicio navbar-header__link--active")
+                    a(href="/" class="animated-border" id="navbar-header__link--Inicio") Inicio
+                -const links = ["Catalogo","Contactanos","Ubicación", "Nosotros"]
+                each link in links
+                    li(class="navbar-header__link navbar__link--" + link)
+                        a(href="" + link +".html" id="navbar-header__link--" + link, class="animated-border") #{link}
+            .navbar-header__buttons 
+                //- span(class="navbar-header__button material-icons-round" id="button-seach") search
+                //- span(class="navbar-header__button material-icons-round") dark_mode
+                //- span(class="navbar-header__button material-icons-round") shopping_cart
+                //- span(class="navbar-header__button material-icons-round") account_circle
+                div(id="hamburguer" class="hamburguer navbar-header__button--hamburguer")
+                    .hamburguer__div-center
+

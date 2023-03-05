@@ -46,6 +46,17 @@ gulp.task("cssOmnibus", () => {
             content: ["./public/*.html"],
             css: ["./public/styles.css"],
             safelist: [
+                "hamburguer--simple",
+                "navbar-header__links--hamburger",
+                "navbar-header--hide",
+                "navbar-header--scroll",
+                "display-none",
+                "animated-border--active",
+                "aparecer",
+                "my-slider__navegation-button--opacity-none",
+                "transition-none",
+                "window-visible",
+                "no-scroll"
             ],
             FontFace: true,
             variables: false,
@@ -149,6 +160,7 @@ gulp.task("imagemin720", () => {
 
 
 gulp.task("default", () => {
+    gulp.watch("./src/pug/**/*.pug", gulp.series("pugPages"));
     gulp.watch("./src/pug/*.pug", gulp.series("pugPages"));
     gulp.watch("./src/scss/**/*.scss", gulp.series("cssOmnibus"));
     gulp.watch("./src/scss/**/*.scss", gulp.series("cssPages"));

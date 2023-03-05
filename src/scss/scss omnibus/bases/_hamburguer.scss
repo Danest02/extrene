@@ -1,0 +1,113 @@
+//  TODO:ANCHOR --- BUTTON HAMBURGUER
+
+.hamburguer{
+    $width: 28px;
+    $height: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .hamburguer__div-center{
+        transition: background-color .3s ease ;
+        position: absolute;
+        width: $width;
+        height: $height;
+        background-color: var(--color-icons-primary);
+        border-radius: $height * 0.5;
+        &:before, &:after{
+            transition: background-color .3s ease ;
+            content: " ";
+            position: absolute;
+            display: block;
+            width: $width;
+            height: $height;
+            border-radius: $height * 0.5;
+            background-color: var(--color-icons-primary);
+            top: -8px;
+            transition: background-color 0.5s ease, transform 0.3s;
+
+        }
+        &:after{
+            top: 8px;
+        }
+
+    }
+    .hamburguer--simple{
+        background-color: var(--color-btn-hover);
+        height: 0;
+        background-color: red;
+        &:before, &:after{
+            top: -2px;
+            transform: rotate(-45deg);
+            background-color: var(--color-btn-hover);
+        }
+        &:after{
+            transform: rotate(45deg);
+            background-color: var(--color-btn-hover);
+
+        }
+    }
+    .hamburguer-left-arrow{
+        &:before, &:after{
+            transform: rotate(-35deg);
+            width: $width;
+            top: -.5em;
+            left: -.1em;
+        }
+        &:after{
+            transform: rotate(35deg);
+            top: .5em;
+            left: -.1em;
+
+        }
+
+    }
+    .hamburguer-right-arrow{
+        &:before, &:after{
+            transform: rotate(35deg);
+            width: $width;
+            top: -.5em;
+            right: -.1em;
+        }
+        &:after{
+            transform: rotate(-35deg);
+            top: .5em;
+            right: -.1em;
+
+        }
+
+    }
+    .hamburguer-compress{
+        &:before, &:after{
+            top: 0;
+            transition: top .5s;
+        }
+    }
+    .hamburguer-right-arrow{
+        transform: rotate(90deg);
+
+        &:before, &:after{
+            transform: rotate(-90deg);
+            top: -.5em;
+        }
+        &:after{
+            height: 0;
+        }
+
+    }
+}
+
+
+
+.contenedor-hamburguer-scroll {
+    background-color: var(--color-white-500);
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, .5);
+}
+
+.contenedor-hamburguer-active {
+    background: none;
+    box-shadow: none;
+}
