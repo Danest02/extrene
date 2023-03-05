@@ -747,3 +747,65 @@ body {
   pointer-events: auto;
   transition: transform 0.5s ease;
 }
+
+.my-slider {
+  --column: 1;
+  --row: 1;
+  --gap: 0px;
+  position: relative;
+  display: grid;
+  height: 100%;
+  grid-template-rows: 1fr min-content;
+  width: 100%;
+  overflow: hidden;
+}
+.my-slider .my-slider__slides-container {
+  height: 100%;
+  cursor: grab;
+}
+.my-slider .my-slider__slides-container .my-slider__slides {
+  height: 100%;
+  max-height: 100%;
+  display: grid;
+  gap: var(--gap);
+  grid-auto-columns: calc(100% / var(--column) - var(--gap));
+  grid-template-rows: repeat(var(--row), auto);
+  grid-auto-flow: column;
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+}
+.my-slider .my-slider__slides-container .my-slider__slides .my-slider__slide {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  line-height: 0;
+}
+.my-slider .my-slider__navegation {
+  height: -moz-min-content;
+  height: min-content;
+  background-color: red;
+}
+.my-slider .my-slider__navegation .my-slider__navegation-button--back::after {
+  content: "\e5e0";
+}
+.my-slider .my-slider__navegation .my-slider__navegation-button--next::after {
+  content: "\e5e1";
+}
+.my-slider .my-slider__navegation--down {
+  gap: 1rem;
+  height: -moz-min-content;
+  height: min-content;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.my-slider .my-slider__navegation-button--opacity-none {
+  opacity: 0;
+  cursor: default;
+}
+.my-slider .my-slider__navegation-button--opacity-none::after, .my-slider .my-slider__navegation-button--opacity-none::before {
+  pointer-events: none;
+}

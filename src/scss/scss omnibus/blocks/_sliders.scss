@@ -16,6 +16,7 @@
 			height: 100%;
 		   max-height: 100%;
 		   display: grid;
+		   gap: var(--gap);
 		   grid-auto-columns: calc(100% / var(--column) - var(--gap));
 		   grid-template-rows: repeat(var(--row), auto);
 		   grid-auto-flow: column;
@@ -35,6 +36,7 @@
     
 	.my-slider__navegation {
         height: min-content;
+		background-color: red;
 		.my-slider__navegation-button {
 			cursor: pointer;
 		}

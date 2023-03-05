@@ -63,7 +63,8 @@ class MySlider {
 		this.newOrientation;
 		this.indexScreen
 		this.bb = true
-		this.loopActive = typeof this.loop !== "undefined" ? true : false
+		// this.loopActive = typeof this.loop !== "undefined" ? true : false
+		this.loopActive = this.loop !== false ? true : false
 	}
 	// TODO ---   ORIENTACIÓN
 
@@ -354,15 +355,17 @@ class MySlider {
 		this.bb = false
 	}
 	hidenButton() {
-		if (this.currentIndex == 0) {
-			this.$mySliderBackbutton.classList.add("my-slider__navegation-button--opacity-none");
-		} else {
-			this.$mySliderBackbutton.classList.remove("my-slider__navegation-button--opacity-none");
-		}
-		if (this.currentIndex == this.indexScreen) {
-			this.$mySliderNextbutton.classList.add("my-slider__navegation-button--opacity-none");
-		} else {
-			this.$mySliderNextbutton.classList.remove("my-slider__navegation-button--opacity-none");
+		if(this.$mySliderNextbutton){
+			if (this.currentIndex == 0) {
+				this.$mySliderBackbutton.classList.add("my-slider__navegation-button--opacity-none");
+			} else {
+				this.$mySliderBackbutton.classList.remove("my-slider__navegation-button--opacity-none");
+			}
+			if (this.currentIndex == this.indexScreen) {
+				this.$mySliderNextbutton.classList.add("my-slider__navegation-button--opacity-none");
+			} else {
+				this.$mySliderNextbutton.classList.remove("my-slider__navegation-button--opacity-none");
+			}
 		}
 	}
 
@@ -395,13 +398,13 @@ class MySlider {
 		}, this.interval.time);
 	}
 }
-const sliderTop = new MySlider(".slider-header", {
+const sliderTop = new MySlider(".slider-galery-top", {
 	// interval: {
 	// 	time: 5000,
 	// 	resume: 7000,
 	// },
-	loop: "active",
+	loop: false,
 });
 sliderTop.initialize();
-const sliderCatalogueIndex = new MySlider(".slider-catalogue-index", {});
-sliderCatalogueIndex.initialize();
+// const sliderCatalogueIndex = new MySlider(".slider-catalogue-index", {});
+// sliderCatalogueIndex.initialize();
