@@ -1,45 +1,41 @@
-
 .my-slider {
 	--column: 1;
 	--row: 1;
 	--gap: 0px;
 	position: relative;
-    display: grid;
-    height: 100%;
-    grid-template-rows: 1fr min-content;
-    width: 100%;
+	display: grid;
+	height: 100%;
+	grid-template-rows: 1fr min-content;
+	width: 100%;
 	overflow: hidden;
-	.my-slider__slides-container{
+
+	.my-slider__slides-container {
 		height: 100%;
 		cursor: grab;
+
 		.my-slider__slides {
 			height: 100%;
-		   max-height: 100%;
-		   display: grid;
-		   gap: var(--gap);
-		   grid-auto-columns: calc(100% / var(--column) - var(--gap));
-		   grid-template-rows: repeat(var(--row), auto);
-		   grid-auto-flow: column;
-		   transform: translateX(0);
-		   transition: transform 0.3s ease-out;
-		   
-		   .my-slider__slide {
-			   overflow: hidden;
-			   height: 100%;
-			   width: 100%;
-			   user-select: none;
-			   line-height: 0;
-		   }
-	   }
-	   
-	}
-    
-	.my-slider__navegation {
-        height: min-content;
-		background-color: red;
-		.my-slider__navegation-button {
-			cursor: pointer;
+			max-height: 100%;
+			display: grid;
+			gap: var(--gap);
+			grid-auto-columns: calc(100% / var(--column) - var(--gap));
+			grid-template-rows: repeat(var(--row), auto);
+			grid-auto-flow: column;
+			transform: translateX(0);
+			transition: transform 0.3s ease-out;
+
+			.my-slider__slide {
+				overflow: hidden;
+				height: 100%;
+				width: 100%;
+				user-select: none;
+				line-height: 0;
+			}
 		}
+	}
+
+	.my-slider__navegation {
+		height: min-content;
 
 		.my-slider__navegation-button--back {
 			&::after {
@@ -55,37 +51,96 @@
 	}
 
 	.my-slider__navegation--down {
+		background-color: rebeccapurple;
+		@extend .flex-center;
 		gap: 1rem;
-		height: min-content;
-        justify-content: center;
-		align-items: center;
-		display: flex; 
+		padding: 0.5rem 0;
+
 		.my-slider__navegation-button {
+			font-family: "Material Icons";
+			cursor: pointer;
 			height: 48px;
-            width: 48px;
+			width: 48px;
 			border-radius: 50%;
+			background-color: var(--color-button-slide-backgroud);
 			box-shadow: 0 0 10px rgba(17, 17, 17, 0.25);
-			transition: transform .3s ease;
-            &:hover{
+			transition: transform 0.3s ease;
+
+			&:hover {
 				transform: scale(1.07);
-				&::after{
+
+				&::after {
 					color: var(--color-btn-outline-default);
 				}
-            }
-            &:active{
+			}
+
+			&:active {
 				transform: scale(1);
-            }
+			}
+
 			&::after {
-                height: 100%;
+				font-family: "Material Icons";
+				height: 100%;
 				width: 100%;
-				border-radius: 50%;
-				font-family: "material-icons-round";
 				@extend .flex-center;
-				color: inherit;
+				color: var(--color-button-slide-text);
 				font-size: 32px;
 			}
 		}
 
+		.my-slider__navegation-button--back {
+			&::after {
+				transform: translateX(4px);
+			}
+		}
+	}
+
+	.my-slider__navegation--side-small {
+		@extend .flex-center;
+		background-color: aqua;
+
+		.my-slider__navegation-button {
+			position: absolute;
+			bottom:  calc(50% - 24px);
+			font-family: "Material Icons";
+			cursor: pointer;
+			height: 48px;
+			width: 48px;
+			border-radius: 50%;
+			background-color: var(--color-button-slide-backgroud);
+			box-shadow: 0 0 10px rgba(17, 17, 17, 0.25);
+			transition: transform 0.3s ease;
+
+			&:hover {
+				transform: scale(1.07);
+
+				&::after {
+					color: var(--color-btn-outline-default);
+				}
+			}
+
+			&:active {
+				transform: scale(1);
+			}
+
+			&::after {
+				font-family: "Material Icons";
+				height: 100%;
+				width: 100%;
+				@extend .flex-center;
+				color: var(--color-button-slide-text);
+				font-size: 32px;
+			}
+		}
+		.my-slider__navegation-button--next{
+			right: 10px;
+		}
+		.my-slider__navegation-button--back {
+			left: 10px;
+			&::after {
+				transform: translateX(4px);
+			}
+		}
 	}
 
 	.my-slider__navegation--side {
@@ -96,7 +151,7 @@
 
 			&::after {
 				background-color: #e337029d;
-				font-family: "material-icons-round";
+				font-family: "material-icons";
 				transition: transform 0.3s ease;
 				@extend .flex-center;
 				height: 100%;
@@ -136,8 +191,8 @@
 		.my-slider__navegation-button--next {
 			right: 0;
 		}
-
 	}
+
 	.my-slider__navegation-button--opacity-none {
 		opacity: 0;
 		cursor: default;
@@ -145,68 +200,6 @@
 		&::after,
 		&::before {
 			pointer-events: none;
-		}
-	}
-	.my-slider__navegation--side-small {
-		.my-slider__navegation-button {
-            @extend .flex-center;
-			position: absolute;
-            top: calc(50% - 20px);
-			border-radius: 50%;
-            min-height: 48px;
-            min-width: 48px;
-			box-shadow: 0 0 10px rgba(17, 17, 17, 0.25);
-			overflow: hidden;
-			transition: transform .3s, opacity 0.3s ease;
-			color: var(--color-btn-outline-default);
-			&::after {
-                font-family: "material-icons-round";
-				transition: color 0.3s ease;
-				@extend .flex-center;
-				color: inherit;
-				font-size: 40px;
-			}
-
-			&::before {
-				content: " ";
-				opacity: 0;
-				@extend .position-absolute;
-				background-color: var(--color-secondary-100);
-			}
-
-			&:hover {
-				transform: scale(1.1);
-				&::before {
-					opacity: 1;
-				}
-				
-				&::after {
-					z-index: $z-index-1;
-				}
-			}
-
-			&:active {
-				transform: scale(0.9);
-			}
-		}
-
-		.my-slider__navegation-button--back {
-			left: 8px;
-		}
-
-		.my-slider__navegation-button--next {
-			right: 8px;
-		}
-
-		.my-slider__navegation-button--opacity-none {
-			opacity: 0;
-			cursor: default;
-			pointer-events: none;
-
-			&::after,
-			&::before {
-				pointer-events: none;
-			}
 		}
 	}
 }

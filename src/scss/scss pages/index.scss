@@ -74,17 +74,23 @@
       --column: 5;
       --row: 1;
       --gap: 4px;
-      .slider-galery-top__product {
-        @extend .border-radius;
-        line-height: 0;
-        img {
-          max-width: 100%;
-          transition: transform 0.3s;
-          object-fit: contain;
-        }
-        &:hover {
-          img {
-            transform: scale(1.05);
+      --color-button-slide-backgroud: white;
+      --color-button-slide-text: black;
+      .my-slider__slides-container {
+        .my-slider__slides {
+          .slider-galery-top__product {
+            @extend .border-radius;
+            line-height: 0;
+            img {
+              max-width: 100%;
+              transition: transform 0.3s;
+              object-fit: contain;
+            }
+            &:hover {
+              img {
+                transform: scale(1.05);
+              }
+            }
           }
         }
       }

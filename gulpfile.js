@@ -19,7 +19,7 @@ const renamePHP = false
 gulp.task("pugPages", () => {
     return (
         gulp
-            .src("./src/pug/*.pug")
+            .src("./src/views/*.pug")
             .pipe(
                 pug({
                     pretty: minified ? false : true,
@@ -56,7 +56,9 @@ gulp.task("cssOmnibus", () => {
                 "my-slider__navegation-button--opacity-none",
                 "transition-none",
                 "window-visible",
-                "no-scroll"
+                "no-scroll",
+                "material-icons",
+                "my-slider__navegation-button"
             ],
             FontFace: true,
             variables: false,
@@ -161,7 +163,7 @@ gulp.task("imagemin720", () => {
 
 gulp.task("default", () => {
     gulp.watch("./src/pug/**/*.pug", gulp.series("pugPages"));
-    gulp.watch("./src/pug/*.pug", gulp.series("pugPages"));
+    gulp.watch("./src/views/*.pug", gulp.series("pugPages"));
     gulp.watch("./src/scss/**/*.scss", gulp.series("cssOmnibus"));
     gulp.watch("./src/scss/**/*.scss", gulp.series("cssPages"));
     gulp.watch("./src/js/*.js", gulp.series("babel"));

@@ -1,4 +1,4 @@
-extends ./templates/template.pug
+extends ../pug/templates/template.pug
 block head
     link(rel="stylesheet" type="text/css" href="./index.css")
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
@@ -30,11 +30,10 @@ block header
 
 block main
     .line
-
         .container-large
-            .my-slider.slider-galery-top
+            .my-slider.slider-galery-top 
                 .my-slider__slides-container
-                    .my-slider__slides
+                    .my-slider__slides.slider-galery-top__slides
                         a.slider-galery-top__product.my-slider__slide
                             img(src="img/CB 1.jpg")
                         a.slider-galery-top__product.my-slider__slide
@@ -55,9 +54,10 @@ block main
                             img(src="img/CB 9.jpg")
                         a.slider-galery-top__product.my-slider__slide
                             img(src="img/CB 10.jpg")
-                .my-slider__navegation.my-slider__navegation--down 
-                    .my-slider__navegation-button--back
-                    .my-slider__navegation-button--next
+                .my-slider__navegation.my-slider__navegation--side-small
+                    .my-slider__navegation-button.my-slider__navegation-button--back
+                    .my-slider__navegation-button.my-slider__navegation-button--next
+
             .line__header
                 .line__text 
                     h2.h2 Envíos a todo el pais

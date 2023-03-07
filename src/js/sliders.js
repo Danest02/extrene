@@ -377,9 +377,11 @@ class MySlider {
 				this.semaphoreButton = false;
 				this.semaphoreInterval = false;
 				if (e.target == this.$mySliderNextbutton) {
-					this.currentIndex += 1 * Math.floor(this.numberOfColumns);
+					this.currentIndex += 1 ;
+					// this.currentIndex += 1 * Math.floor(this.numberOfColumns);
 				} else if (e.target == this.$mySliderBackbutton) {
-					this.currentIndex += -1 * Math.floor(this.numberOfColumns);
+					this.currentIndex += -1 ;
+					// this.currentIndex += -1 * Math.floor(this.numberOfColumns);
 				}
 				this.setPositionByIndex();
 			}
