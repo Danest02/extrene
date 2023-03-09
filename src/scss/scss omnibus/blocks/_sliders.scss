@@ -8,12 +8,13 @@
 	display: grid;
 	height: 100%;
 	grid-template-rows: 1fr min-content;
-	width: 100%;
+	max-width: 100%;
 	overflow: hidden;
 
 	.my-slider__slides-container {
 		height: 100%;
 		cursor: grab;
+
 
 
 		.my-slider__slides {
@@ -33,6 +34,11 @@
 				width: 100%;
 				user-select: none;
 				line-height: 0;
+				
+				img{
+					max-width: 100%;
+					max-height: 100%;
+				}
 			}
 		}
 	}
@@ -139,8 +145,14 @@
 		.my-slider__navegation-button--back {
 			left: 10px;
 			&::after {
-				transform: translateX(4px);
+				transform: translateX(6px);
 			}
+		}
+		.my-slider__navegation-button--next {
+			&::after{
+				transform: translateX(2px);
+			}
+
 		}
 	}
 

@@ -14,7 +14,7 @@
   transform: translateX(0);
 }
 
- .main .line-jean .line-jean-container .line-jean__text, .main .line-buzos .line-buzos__text, .main .line-buzos, .main .line, .header .welcome .welcome__slider .swiper-wrapper .swiper-slide, .header .welcome .welcome__text {
+ .main .line-jean .line-jean-container .line-jean__text, .main .line-buzos .line-buzos__text, .main .line-buzos, .main .line, .header .welcome .welcome__slider .my-slider__slide, .header .welcome .welcome__text {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -250,34 +250,22 @@ h3 {
 }
 .header .welcome .welcome__text {
   gap: 2rem;
-  width: 70%;
+  width: 0;
+  flex: 1.5;
 }
 .header .welcome .welcome__slider {
+  flex: 1;
   display: flex;
 }
-.header .welcome .welcome__slider .swiper-wrapper .swiper-slide {
-  padding: 2rem 0;
-  position: relative;
-  cursor: pointer;
+.header .welcome .welcome__slider .my-slider__slide {
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
-.header .welcome .welcome__slider .swiper-wrapper .swiper-slide img {
-  width: auto;
-  min-height: none;
-  max-height: 100%;
-  transition: transform 0.5s, filter 0.3s;
+.header .welcome .welcome__slider .my-slider__slide img {
+  transition: transform 0.3s ease;
 }
-.header .welcome .welcome__slider .swiper-wrapper .swiper-slide .swiper-slide__button {
-  position: absolute;
-  bottom: 35%;
-  border: 1px solid var(--color-primary-900);
-  opacity: 0;
-  transition: opacity 0.3s, transform 0.3s;
-}
-.header .welcome .welcome__slider .swiper-wrapper .swiper-slide:hover img {
-  transform: scale(1.05);
-}
-.header .welcome .welcome__slider .swiper-wrapper .swiper-slide:hover a {
-  opacity: 1;
+.header .welcome .welcome__slider .my-slider__slide img:hover {
+  transform: scale(1.03);
 }
 
 .main .line {

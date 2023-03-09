@@ -65,6 +65,9 @@ class MySlider {
 		this.bb = true
 		// this.loopActive = typeof this.loop !== "undefined" ? true : false
 		this.loopActive = this.loop !== false ? true : false
+
+		this.dragging = parameters.dragging
+		this.semaphoreDragging = this.dragging !== false ? true : false
 	}
 	// TODO ---   ORIENTACIÓN
 
@@ -187,7 +190,7 @@ class MySlider {
 			this.navegationButton();
 		}
 		// *Loop
-		if (this.loopActive) {
+		if (this.loopActive == true) {
 			this.$mySliderSlides.style.transition = "none";
 			this.$mySliderSlides.prepend(this.$mySliderSlides.lastElementChild);
 			this.currentIndex = 1;
@@ -209,7 +212,7 @@ class MySlider {
 			if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
 				this.funtionNewOrientation();
 				if (this.newOrientation !== this.orientation) {
-					if(typeof this.loop !== "undefined"){
+					if(this.loop == true){
 						this.currentIndex = 1;
 					}else{
 						this.currentIndex = 0;
@@ -236,25 +239,28 @@ class MySlider {
 		
 	}
 	touchMove(e) {
-		if (this.semaphoreInterval) {
-			this.semaphoreInterval = false;
-		}
-		if (this.isDragging) {
-			this.$mySliderSlidesContainer.style.cursor = "grabbing";
-			this.currentPosition = this.getPositionX(e);
-			this.currentPositionY = this.getPositionY(e);
-			this.currentTranslate = this.prevTranslate + this.currentPosition - this.startPosition;
-			if (Math.abs(this.startPositionY - this.currentPositionY) < 10) {
-				if (Math.abs(this.startPosition - this.currentPosition) > 10) {
-					this.semaphore = true;
+		if(this.semaphoreDragging == true){
+			
+			if (this.semaphoreInterval) {
+				this.semaphoreInterval = false;
+			}
+			if (this.isDragging) {
+				this.$mySliderSlidesContainer.style.cursor = "grabbing";
+				this.currentPosition = this.getPositionX(e);
+				this.currentPositionY = this.getPositionY(e);
+				this.currentTranslate = this.prevTranslate + this.currentPosition - this.startPosition;
+				if (Math.abs(this.startPositionY - this.currentPositionY) < 10) {
+					if (Math.abs(this.startPosition - this.currentPosition) > 10) {
+						this.semaphore = true;
+					}
 				}
+				if (this.semaphore) {
+					if(!this.bb && this.loopActive) return
+					this.setTranslate();
+				}
+	
+				// // this.animation();
 			}
-			if (this.semaphore) {
-				if(!this.bb && this.loopActive) return
-				this.setTranslate();
-			}
-
-			// // this.animation();
 		}
 	}
 	touchEnd() {
@@ -264,7 +270,7 @@ class MySlider {
 		movedBy > 0 ? (direction = -1) : (direction = 1);
 		if (this.semaphore) {
 			// * cantidad de slide que se desplazan
-			if(typeof this.loop !== "undefined"){
+			if(this.loop == true){
 				this.currentIndex += 1 * direction;
 			}else{
 				if (Math.abs(movedBy) > this.slideWidth * 2.5) {
@@ -283,7 +289,7 @@ class MySlider {
 		this.$mySliderSlidesContainer.style.cursor = "grab";
 	}
 	reorder() {
-		if (this.loopActive) {
+		if (this.loopActive == true) {
 			if (this.currentIndex == 0) {
 				this.$mySliderSlides.prepend(this.$mySliderSlides.lastElementChild);
 				this.$mySliderSlides.style.transition = "none";
@@ -325,6 +331,7 @@ class MySlider {
 	// }
 	// TODO ---   ESTABLECER INDICE DE POSICION
 	setPositionByIndex() {
+		console.log(this.currentIndex)
 		// *Bloquear el desplazamiento de los slide de los extremos
 		if (!this.loopActive) {
 			this.indexScreen = Math.ceil(this.mySliderSlidesArray.length / this.numberOfRows - Math.floor(this.numberOfColumns));
@@ -377,11 +384,11 @@ class MySlider {
 				this.semaphoreButton = false;
 				this.semaphoreInterval = false;
 				if (e.target == this.$mySliderNextbutton) {
-					this.currentIndex += 1 ;
-					// this.currentIndex += 1 * Math.floor(this.numberOfColumns);
+					// this.currentIndex += 1 ;
+					this.currentIndex += 1 * Math.floor(this.numberOfColumns);
 				} else if (e.target == this.$mySliderBackbutton) {
-					this.currentIndex += -1 ;
-					// this.currentIndex += -1 * Math.floor(this.numberOfColumns);
+					// this.currentIndex += -1 ;
+					this.currentIndex += -1 * Math.floor(this.numberOfColumns);
 				}
 				this.setPositionByIndex();
 			}
@@ -400,6 +407,15 @@ class MySlider {
 		}, this.interval.time);
 	}
 }
+const welcomeSlider = new MySlider(".welcome__slider", {
+	interval: {
+		time: 4000,
+		resume: 9000,
+	},
+	dragging: false,
+	// loop: false,
+});
+welcomeSlider.initialize();
 const sliderTop = new MySlider(".slider-galery-top", {
 	// interval: {
 	// 	time: 5000,
