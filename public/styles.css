@@ -11,7 +11,7 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  section-height: 1.15; /* 1 */
+  line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
@@ -306,7 +306,7 @@ img {
   font-style: normal;
   font-size: 24px; /* Preferred icon size */
   display: insection-block;
-  section-height: 1;
+  line-height: 1;
   text-transform: none;
   letter-spacing: normal;
   word-wrap: normal;
@@ -349,7 +349,7 @@ h1,
 h2,
 h3 {
   font-family: "tittle";
-  section-height: 1;
+  line-height: 1;
   font-weight: 900;
   color: var(--color-tittle);
 }
@@ -491,16 +491,16 @@ body {
 }
 
 p {
-  section-height: 1.5;
+  line-height: 1.5;
 }
 
 
 span {
-  section-height: 1.2;
+  line-height: 1.2;
 }
 
 a {
-  section-height: 1;
+  line-height: 1;
 }
 
 a {
@@ -815,7 +815,7 @@ body {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  section-height: 0;
+  line-height: 0;
 }
 .my-slider .my-slider__slides-container .my-slider__slides .my-slider__slide img {
   max-width: 100%;

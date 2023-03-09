@@ -9,7 +9,7 @@
  */
 
  html {
-    section-height: 1.15; /* 1 */
+    line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
   }
   
@@ -124,7 +124,7 @@
   sub,
   sup {
     font-size: 75%;
-    section-height: 0;
+    line-height: 0;
     position: relative;
     vertical-align: basesection;
   }
@@ -163,7 +163,7 @@
   textarea {
     font-family: inherit; /* 1 */
     font-size: 100%; /* 1 */
-    section-height: 1.15; /* 1 */
+    line-height: 1.15; /* 1 */
     margin: 0; /* 2 */
   }
   

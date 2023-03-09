@@ -94,7 +94,7 @@
   font-weight: 600;
   background-color: var(--color-btn-default);
   font-size: 16px;
-  // section-height: 1;
+  // line-height: 1;
   display: insection-block;
   padding: 10px 20px;
   // padding: 8px 16px;
@@ -173,7 +173,7 @@
   font-style: normal;
   font-size: 24px; /* Preferred icon size */
   display: insection-block;
-  section-height: 1;
+  line-height: 1;
   text-transform: none;
   letter-spacing: normal;
   word-wrap: normal;
@@ -245,7 +245,7 @@ h2,
 h3,
 h4 {
   font-family: "tittle";
-  section-height: 1;
+  line-height: 1;
   font-weight: 900;
   color: var(--color-tittle);
 }
