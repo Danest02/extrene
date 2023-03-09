@@ -37,7 +37,7 @@ block header
 
 
 block main
-    .line
+    .section
         .container-large
             .my-slider.slider-galery-top 
                 .my-slider__slides-container
@@ -126,8 +126,8 @@ block main
                     .my-slider__navegation-button.my-slider__navegation-button--back
                     .my-slider__navegation-button.my-slider__navegation-button--next
 
-            .line__header
-                .line__text 
+            .section__header
+                .section__text 
                     h2.h2 Envíos a todo el pais
                     p VENTAS AL DETAL Y POR MAYOR
 
@@ -135,8 +135,8 @@ block main
 
 
 
-    .line-buzos.container
-        .line-buzos__text
+    .section-buzos.container
+        .section-buzos__text
             h2.h1 Nuestros Diseños son Exclusivos
             p Todos los diseños son de nuestros grupo de diseñadores
             .mybtn Quiero saber más
@@ -151,19 +151,39 @@ block main
                 .my-slider__navegation-button.my-slider__navegation-button--back
                 .my-slider__navegation-button.my-slider__navegation-button--next
 
-    .line-jean
-        .container-large.line-jean-container
-            .linea-jean-imgs
-                .line-jean__img
-                    img(src="img/E 1.webp")
-                .line-jean__img
-                    img(src="img/E 2.webp")
-                .line-jean__img
-                    img(src="img/E 3.webp")
-            .line-jean__text
-                h2.h2 ¿Qué estilo te gusta?
-                br
-                .mybtn.mybtn--white Siguiente
+    .section-styles
+        .styles-container.container-large
+            .slider-styles.my-slider
+                .slider-styles__slides-container.my-slider__slides-container
+                    .slider-styles__slides.my-slider__slides
+                        a(class="slider-styles__slide my-slider__slide" data-style="Camiseta")
+                            img(src="img/E 1.webp")
+                        a(class="slider-styles__slide my-slider__slide" data-style="Camiseta")
+                            img(src="img/E 2.webp")
+                        a(class="slider-styles__slide my-slider__slide" data-style="Camiseta")
+                            img(src="img/E 3.webp")
+                        a(class="slider-styles__slide my-slider__slide" data-style="Camiseta")
+                            img(src="img/E 1.webp")
+                        a(class="slider-styles__slide my-slider__slide" data-style="Camiseta")
+                            img(src="img/E 2.webp")
+                        a(class="slider-styles__slide my-slider__slide" data-style="Camiseta")
+                            img(src="img/E 3.webp")
+                    .my-slider__navegation.my-slider__navegation--side-small
+                        .my-slider__navegation-button.my-slider__navegation-button--next
+                        .my-slider__navegation-button.my-slider__navegation-button--back
+
+            .styles-text
+                h2.h3 ¿Qué estilo te gusta?
+                .styles-tex__links
+                    a Camisetas 
+                    a Oversize
+                    a Buzos con gorro
+                    a Buzos con cierre
+                    a Guarda polvo 
+                    a Camisa Polo 
+                    a esqueleto
+
+                //- .mybtn.mybtn--white Ver más
 
 
 

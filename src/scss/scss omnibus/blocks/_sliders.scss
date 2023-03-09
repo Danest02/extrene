@@ -33,7 +33,7 @@
 				height: 100%;
 				width: 100%;
 				user-select: none;
-				line-height: 0;
+				section-height: 0;
 				
 				img{
 					max-width: 100%;
@@ -79,7 +79,7 @@
 				transform: scale(1.07);
 
 				&::after {
-					color: var(--color-btn-outline-default);
+					color: var(--color-btn-outsection-default);
 				}
 			}
 
@@ -122,7 +122,7 @@
 				transform: scale(1.07);
 
 				&::after {
-					color: var(--color-btn-outline-default);
+					color: var(--color-btn-outsection-default);
 				}
 			}
 

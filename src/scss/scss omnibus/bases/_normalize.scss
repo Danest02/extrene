@@ -4,12 +4,12 @@
    ========================================================================== */
 
 /**
- * 1. Correct the line height in all browsers.
+ * 1. Correct the section height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
  html {
-    line-height: 1.15; /* 1 */
+    section-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
   }
   
@@ -83,8 +83,8 @@
   
   abbr[title] {
     border-bottom: none; /* 1 */
-    text-decoration: underline; /* 2 */
-    text-decoration: underline dotted; /* 2 */
+    text-decoration: undersection; /* 2 */
+    text-decoration: undersection dotted; /* 2 */
   }
   
   /**
@@ -117,16 +117,16 @@
   }
   
   /**
-   * Prevent `sub` and `sup` elements from affecting the line height in
+   * Prevent `sub` and `sup` elements from affecting the section height in
    * all browsers.
    */
   
   sub,
   sup {
     font-size: 75%;
-    line-height: 0;
+    section-height: 0;
     position: relative;
-    vertical-align: baseline;
+    vertical-align: basesection;
   }
   
   sub {
@@ -163,7 +163,7 @@
   textarea {
     font-family: inherit; /* 1 */
     font-size: 100%; /* 1 */
-    line-height: 1.15; /* 1 */
+    section-height: 1.15; /* 1 */
     margin: 0; /* 2 */
   }
   
@@ -218,7 +218,7 @@
   [type="button"]:-moz-focusring,
   [type="reset"]:-moz-focusring,
   [type="submit"]:-moz-focusring {
-    outline: 1px dotted ButtonText;
+    outsection: 1px dotted ButtonText;
   }
   
   /**
@@ -250,7 +250,7 @@
    */
   
   progress {
-    vertical-align: baseline;
+    vertical-align: basesection;
   }
   
   /**
@@ -283,12 +283,12 @@
   
   /**
    * 1. Correct the odd appearance in Chrome and Safari.
-   * 2. Correct the outline style in Safari.
+   * 2. Correct the outsection style in Safari.
    */
   
   [type="search"] {
     -webkit-appearance: textfield; /* 1 */
-    outline-offset: -2px; /* 2 */
+    outsection-offset: -2px; /* 2 */
   }
   
   /**

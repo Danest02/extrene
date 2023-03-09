@@ -350,7 +350,12 @@ class MySlider {
 		this.slideWidth = this.$mySlider.clientWidth / this.numberOfColumns - this.gap;
 		this.currentTranslate = this.currentIndex * -(this.slideWidth + this.gap);
 		this.prevTranslate = this.currentTranslate;
-		this.$mySliderSlides.style.transition = "transform .3s ease-out";
+		
+		if(this.numberOfColumns > 2){
+			this.$mySliderSlides.style.transition = "transform .5s ease-out";
+		}else{
+			this.$mySliderSlides.style.transition = "transform .3s ease-out";
+		}
 		this.setTranslate();
 		this.$mySliderSlides.addEventListener("transitionend", () => {
 			this.reorder();
@@ -432,5 +437,13 @@ const sliderExclusive = new MySlider(".slider-exclusive", {
 	loop: false,
 });
 sliderExclusive.initialize();
+const sliderStyles = new MySlider(".slider-styles", {
+	// interval: {
+	// 	time: 5000,
+	// 	resume: 7000,
+	// },
+	loop: false,
+});
+sliderStyles.initialize();
 // const sliderCatalogueIndex = new MySlider(".slider-catalogue-index", {});
 // sliderCatalogueIndex.initialize();

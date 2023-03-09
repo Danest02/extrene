@@ -7,11 +7,11 @@
 /* Document
    ========================================================================== */
 /**
- * 1. Correct the line height in all browsers.
+ * 1. Correct the section height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  line-height: 1.15; /* 1 */
+  section-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
@@ -79,7 +79,7 @@ a {
  */
 
 /**
- * Prevent `sub` and `sup` elements from affecting the line height in
+ * Prevent `sub` and `sup` elements from affecting the section height in
  * all browsers.
  */
 
@@ -151,7 +151,7 @@ img {
 
 /**
  * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
+ * 2. Correct the outsection style in Safari.
  */
 
 /**
@@ -220,10 +220,10 @@ img {
   --color-btn-hover: var(--color-primary-900);
   --color-btn-pressed: var(--color-primary-900);
   --color-btn-disabled: var(--color-primary-200);
-  --color-btn-outline-default: var(--color-primary-900);
-  --color-btn-outline-hover: var(--color-primary-100);
-  --color-btn-outline-pressed: var(--color-primary-900);
-  --color-btn-outline-disabled: var(--color-primary-400);
+  --color-btn-outsection-default: var(--color-primary-900);
+  --color-btn-outsection-hover: var(--color-primary-100);
+  --color-btn-outsection-pressed: var(--color-primary-900);
+  --color-btn-outsection-disabled: var(--color-primary-400);
   --color-text: var(--color-primary-900);
   --color-text-white: #fefefe;
   --color-tittle: var(--color-primary-700);
@@ -247,13 +247,13 @@ img {
   font-weight: 600;
   background-color: var(--color-btn-default);
   font-size: 16px;
-  display: inline-block;
+  display: insection-block;
   padding: 10px 20px;
   color: var(--color-white);
   text-decoration: none;
   text-align: center;
   border-radius: 2px;
-  outline: none;
+  outsection: none;
   cursor: pointer;
   border: none;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -283,13 +283,13 @@ img {
   background-color: var(--color-white);
 }
 
-.mybtn--outline {
+.mybtn--outsection {
   background-color: transparent;
-  color: var(--color-btn-outline-default);
-  border: 1px solid var(--color-btn-outline-default);
+  color: var(--color-btn-outsection-default);
+  border: 1px solid var(--color-btn-outsection-default);
 }
-.mybtn--outline:hover {
-  background: var(--color-btn-outline-hover);
+.mybtn--outsection:hover {
+  background: var(--color-btn-outsection-hover);
 }
 
 @font-face {
@@ -305,8 +305,8 @@ img {
   font-weight: normal;
   font-style: normal;
   font-size: 24px; /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
+  display: insection-block;
+  section-height: 1;
   text-transform: none;
   letter-spacing: normal;
   word-wrap: normal;
@@ -349,7 +349,7 @@ h1,
 h2,
 h3 {
   font-family: "tittle";
-  line-height: 1;
+  section-height: 1;
   font-weight: 900;
   color: var(--color-tittle);
 }
@@ -491,16 +491,16 @@ body {
 }
 
 p {
-  line-height: 1.5;
+  section-height: 1.5;
 }
 
 
 span {
-  line-height: 1.2;
+  section-height: 1.2;
 }
 
 a {
-  line-height: 1;
+  section-height: 1;
 }
 
 a {
@@ -815,7 +815,7 @@ body {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  line-height: 0;
+  section-height: 0;
 }
 .my-slider .my-slider__slides-container .my-slider__slides .my-slider__slide img {
   max-width: 100%;
@@ -847,7 +847,7 @@ body {
   transform: scale(1.07);
 }
 .my-slider .my-slider__navegation--side-small .my-slider__navegation-button:hover::after {
-  color: var(--color-btn-outline-default);
+  color: var(--color-btn-outsection-default);
 }
 .my-slider .my-slider__navegation--side-small .my-slider__navegation-button:active {
   transform: scale(1);

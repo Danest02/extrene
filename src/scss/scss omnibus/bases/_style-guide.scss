@@ -47,11 +47,11 @@
   --color-btn-pressed: var(--color-primary-900);
   --color-btn-disabled: var(--color-primary-200);
 
-  // * Button state outline
-  --color-btn-outline-default: var(--color-primary-900);
-  --color-btn-outline-hover: var(--color-primary-100);
-  --color-btn-outline-pressed: var(--color-primary-900);
-  --color-btn-outline-disabled: var(--color-primary-400);
+  // * Button state outsection
+  --color-btn-outsection-default: var(--color-primary-900);
+  --color-btn-outsection-hover: var(--color-primary-100);
+  --color-btn-outsection-pressed: var(--color-primary-900);
+  --color-btn-outsection-disabled: var(--color-primary-400);
 
   // * Color text
   --color-text: var(--color-primary-900);
@@ -94,8 +94,8 @@
   font-weight: 600;
   background-color: var(--color-btn-default);
   font-size: 16px;
-  // line-height: 1;
-  display: inline-block;
+  // section-height: 1;
+  display: insection-block;
   padding: 10px 20px;
   // padding: 8px 16px;
   color: var(--color-white);
@@ -103,7 +103,7 @@
   text-align: center;
   border-radius: 2px;
   // border-radius: 18px;
-  outline: none;
+  outsection: none;
   cursor: pointer;
   border: none;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -133,16 +133,16 @@
   }
 }
 
-.mybtn--outline {
+.mybtn--outsection {
   background-color: transparent;
-  color: var(--color-btn-outline-default);
-  border: 1px solid var(--color-btn-outline-default);
+  color: var(--color-btn-outsection-default);
+  border: 1px solid var(--color-btn-outsection-default);
 
   &:hover {
-    background: var(--color-btn-outline-hover);
+    background: var(--color-btn-outsection-hover);
   }
 }
-.mybtn--outline-white {
+.mybtn--outsection-white {
   color: var(--color-text-white);
   border: 1px solid var(--color-text-white);
 }
@@ -172,8 +172,8 @@
   font-weight: normal;
   font-style: normal;
   font-size: 24px; /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
+  display: insection-block;
+  section-height: 1;
   text-transform: none;
   letter-spacing: normal;
   word-wrap: normal;
@@ -245,7 +245,7 @@ h2,
 h3,
 h4 {
   font-family: "tittle";
-  line-height: 1;
+  section-height: 1;
   font-weight: 900;
   color: var(--color-tittle);
 }

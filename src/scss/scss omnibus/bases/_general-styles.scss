@@ -41,25 +41,25 @@ input[type="search"] {
 }
 
 p {
-	line-height: 1.5;
+	section-height: 1.5;
     
 }
 
 address,
 span {
-	line-height: 1.2;
+	section-height: 1.2;
 }
 
 a {
-	line-height: 1;
+	section-height: 1;
 }
 
 // div{
-// 	line-height: 0;
+// 	section-height: 0;
 // }
 
-.line-height-p {
-	line-height: 1.5;
+.section-height-p {
+	section-height: 1.5;
 }
 
 a {
@@ -85,7 +85,7 @@ body {
 
 address {
 	font-style: normal;
-	display: inline-block;
+	display: insection-block;
 }
 
 .body {

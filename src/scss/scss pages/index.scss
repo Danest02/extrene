@@ -10,7 +10,7 @@
   flex-direction: column;
   .welcome {
     display: flex;
-    height: 420px;
+    height: 440px;
     .welcome__text {
       @extend .flex-center, .flex-column;
       gap: 2rem;
@@ -18,11 +18,12 @@
       flex: 1.5;
     }
     .welcome__slider {
+      padding-top: 24px;
       flex: 1;
       display: flex;
       .my-slider__slide{
         @extend .flex-center;
-        padding-top: 16px;
+        padding-top: 14px;
         padding-bottom: 16px;
         img{
           transition: transform .3s ease;
@@ -35,7 +36,7 @@
   }
 }
 .main {
-  .line {
+  .section {
     @extend .flex-center, .flex-column;
     width: 100%;
     background-color: var(--color-primary-700);
@@ -44,12 +45,12 @@
     h2 {
       color: var(--color-text-white);
     }
-    .line__header {
+    .section__header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-top: 2rem;
-      .line__text {
+      .section__text {
         color: var(--color-text-white);
       }
     }
@@ -62,7 +63,7 @@
           .slider-galery-top__product {
             position: relative;
             @extend .border-radius;
-            line-height: 0;
+            section-height: 0;
             img {
               max-width: 100%;
               transition: transform 0.3s;
@@ -100,16 +101,16 @@
       }
     }
   }
-  .line--dama {
+  .section--dama {
     display: none;
     h2,
-    .line__text p {
+    .section__text p {
       color: var(--color-text);
     }
     padding-top: 1rem;
     background-color: antiquewhite;
   }
-  .line-buzos {
+  .section-buzos {
     @extend .flex-center;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -117,7 +118,7 @@
     border-radius: 2px;
     overflow: hidden;
     align-items: stretch;
-    .line-buzos__text {
+    .section-buzos__text {
       @extend .flex-center, .flex-column, .border-radius;
       gap: 1rem;
       padding: 2rem;
@@ -126,38 +127,90 @@
       text-align: center;
       p {
         font-size: 20px;
-        line-height: 1.3;
+        section-height: 1.3;
       }
     }
     .slider-exclusive {
       @extend .border-radius;
       width: 60%;
-      line-height: 0;
+      section-height: 0;
       img {
         max-width: 100%;
       }
     }
   }
-  .line-jean {
-    padding: 2rem;
+  .section-styles {
+    padding: 2rem 0;
     width: 100%;
     background-color: var(--color-primary-400);
-    .line-jean-container {
-      display: grid;
-      grid-template-columns: 3fr 1fr;
-      gap: 2rem;
-      .linea-jean-imgs {
-        display: flex;
-        gap: 12px;
-        .line-jean__img {
-          @extend .border-radius;
+    .styles-container {
+      display: flex;
+      .slider-styles{
+        flex: 3;
+        --column: 2.99;
+        --row: 1;
+        --gap: 8px;      
+        .slider-styles__slides-container{
+          .slider-styles__slides{
+            .slider-styles__slide{
+              overflow: hidden;
+
+              position: relative;
+              &:hover{
+                &::after{
+                  opacity: 1;
+                }
+              } 
+
+              &::after{
+                content: attr(data-style);
+                color: var(--color-text-white);
+                @extend .position-absolute, .flex-center, .h2;
+                background-color: rgba(0, 0, 0, 0.6);
+                opacity: 0;
+                transition: opacity .3s;
+              }
+              // border: 1px solid red;
+              @extend .border-radius;
+              img{
+                list-style: none;
+                object-fit: cover;
+                height: 100%;
+                transition: transform .3s;
+                &:hover{
+                  transform: scale(1.05);
+                }
+              }
+            }
+          }
+          .my-slider__navegation{
+            .my-slider__navegation-button--next{
+              right: 0
+            }
+          }
         }
       }
-      .line-jean__text {
+      .styles-text {
+        flex: 1;
+        max-width: 25%;
+        padding-left: 3rem;
         @extend .flex-center, .flex-column;
-        text-align: center;
+        align-items: start;
+        gap: 2rem;
         h2 {
           color: var(--color-text-white);
+        }
+        .styles-tex__links{
+          @extend .flex-center, .flex-column;
+          align-items: start;
+          a{
+            color: var(--color-text-white);
+            line-height: 1.5;
+            font-size: 18px;
+            &:hover{
+              text-decoration: underline;
+            }
+          }
         }
       }
     }
