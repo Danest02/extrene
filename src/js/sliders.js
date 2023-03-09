@@ -408,5 +408,13 @@ const sliderTop = new MySlider(".slider-galery-top", {
 	loop: false,
 });
 sliderTop.initialize();
+const sliderExclusive = new MySlider(".slider-exclusive", {
+	// interval: {
+	// 	time: 5000,
+	// 	resume: 7000,
+	// },
+	loop: false,
+});
+sliderExclusive.initialize();
 // const sliderCatalogueIndex = new MySlider(".slider-catalogue-index", {});
 // sliderCatalogueIndex.initialize();

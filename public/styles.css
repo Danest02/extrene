@@ -784,6 +784,8 @@ body {
   --column: 1;
   --row: 1;
   --gap: 0px;
+  --color-button-slide-backgroud: rgba(255, 255, 255, 0.5);
+  --color-button-slide-text: black;
   position: relative;
   display: grid;
   height: 100%;
@@ -824,9 +826,6 @@ body {
 }
 .my-slider .my-slider__navegation .my-slider__navegation-button--next::after {
   content: "\e5e1";
-}
-.my-slider .my-slider__navegation--side-small {
-  background-color: aqua;
 }
 .my-slider .my-slider__navegation--side-small .my-slider__navegation-button {
   position: absolute;

@@ -2,6 +2,8 @@
 	--column: 1;
 	--row: 1;
 	--gap: 0px;
+	--color-button-slide-backgroud: rgba(255, 255, 255, 0.5);
+	--color-button-slide-text: black;
 	position: relative;
 	display: grid;
 	height: 100%;
@@ -12,6 +14,7 @@
 	.my-slider__slides-container {
 		height: 100%;
 		cursor: grab;
+
 
 		.my-slider__slides {
 			height: 100%;
@@ -97,7 +100,6 @@
 
 	.my-slider__navegation--side-small {
 		@extend .flex-center;
-		background-color: aqua;
 
 		.my-slider__navegation-button {
 			position: absolute;
@@ -110,7 +112,6 @@
 			background-color: var(--color-button-slide-backgroud);
 			box-shadow: 0 0 10px rgba(17, 17, 17, 0.25);
 			transition: transform 0.3s ease;
-
 			&:hover {
 				transform: scale(1.07);
 
